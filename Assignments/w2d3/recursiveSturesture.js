@@ -1,5 +1,5 @@
 Part II: Write a recursive function that will print “name: value” to the console for every node in the
-following tree data structure. Then write an iterative function that also does this. The following is the output you should have for the recursive version. The iterative version should be similar, but it is not necessary for every line to be in the same order.
+following tree data structure. Then write an iterative function that also does this. The following is the output you should have for the recursive version. The iterative version should be similar, but it is notnecessary for every line to be in the same order.
 body: null
 div: null
 label: Name
