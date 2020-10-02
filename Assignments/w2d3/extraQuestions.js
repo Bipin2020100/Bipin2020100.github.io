@@ -65,7 +65,12 @@ function avgOfNumbers(arr){
 // console.log(avgOfNumbers(numArray))
 
 function maxOfNumbers(arr){
-  return arr.reduce((a, b ) => a < b ?  , 0)  ;
+  return arr.reduce((a, b ) => a < b ? b : a, 0)  ;
 }
 
 console.log(maxOfNumbers(numArray))
+
+function maxForAges(arr){
+  return arr.reduce((a, b) => a < b.age ? b.age : a, 0)
+}
+console.log(maxForAges(peopleArray))
