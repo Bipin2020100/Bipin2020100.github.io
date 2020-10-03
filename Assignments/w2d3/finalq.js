@@ -89,3 +89,8 @@ function printName(node) {
     log(contains(node1, "input")) ;
     log(contains(node2, "p")) ;
     log(contains(node1, "p")) ;
+
+
+    /////////////////////////////////////////////
+    const numArray = [5,0, 7, 77, -20, 300, 51, 2] 
+    const peopleArray = [{name: "Sam", age: 15}, {name: "William", age: 6}, {name: "Lucy", age: 13}, {name: "Barney", age: 80}] map: - double numbers - double age filter: - filter all even numbers - filter all age > 10 - find even, include even - find age > 10, include age > 10 reduce - find sum of numbers - find average of numbers - find max of numbers - find max for ages - use a chain of map filter reduce to find the average age of people with even number ages - use a chain of map filter reduce to find the average age of people with odd number ages

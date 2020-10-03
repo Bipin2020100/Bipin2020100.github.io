@@ -108,3 +108,17 @@ alert( Math.max(...arr) )
 alert( Math.min(...arr) )
 // f) Combine several objects into a single object
 // 8. Write code to illustrate the use of the rest operator 
+
+
+/////////////////////////////////////////////////////////
+
+// Write a recursive function, treeModifier, that will take a tree and a modifier function as
+// parameters. Walk through the tree and apply the function to each node. The function should
+// apply some operation to a node. Write a function that will change the value of a node to be all
+// caps. Write another that will change the value to have *** in front and behind the node value.
+// Write another that will reverse the string of the node value. Call your recursive function with
+// each of these modifier functions.
+// treeModifier(tree, modiferFunc)
+// allCaps(node)
+// addStars(node)
+// reverseNode(node)
