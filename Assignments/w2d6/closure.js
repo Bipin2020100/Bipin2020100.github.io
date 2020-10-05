@@ -3,7 +3,7 @@ var log = console.log; //shortcut for console.log
 if (typeof alert === "undefined") var alert = console.log; //this will log in node and alert in browser
 if (typeof prompt === "undefined") var prompt = require("prompt-sync")(); //this will prompt in node and not affect browser prompt
 
-// // The function sayHi uses an external variable name. When the function runs, which value is it going to use?
+// The function sayHi uses an external variable name. When the function runs, which value is it going to use?
 
 // let name = "John";
 
@@ -106,46 +106,47 @@ if (typeof prompt === "undefined") var prompt = require("prompt-sync")(); //this
 
 // sayHi();
 
-// // The result will show error because the function sayHi is inside a if statement. So, there is no sayHi outside that if statement. That function cannot be called form outside if statement.
+// The result will show error because the function sayHi is inside a if statement. So, there is no sayHi outside that if statement. That function cannot be called form outside if statement.
 
-// ////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 
-// //Write function sum that works like this: sum(a)(b) = a+b.
+//Write function sum that works like this: sum(a)(b) = a+b.
 
-// function sum(n){
-//   return function(b){
-//     return n+b;
-//   };
-// }
+function sum(n){
+  return function(b){
+    return n+b;
+  };
+}
 
-// log(sum(1)(2));
+log(sum(1)(2));
 
-// //For the second parenthesis to work the first one must return a function. (vvv Imp)
+//For the second parenthesis to work the first one must return a function. (vvv Imp)
 
-// /////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
 
-// // What will be the result of this code?
+// What will be the result of this code?
 
-// let x = 1;
+let x = 1;
 
-// function func() {
-//   console.log(x); // ?
+function func() {
+  let x = 2;
+  console.log(x); // ?
 
-//   let x = 2;
-// }
+  // let x = 2;
+}
 
-// func();
+func();
 
-// //(Didnot understand)
+//(Didnot understand)
 
-// ///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 /* .. your code for inBetween and inArray */
 let arr = [1, 2, 3, 4, 5, 6, 7];
 
-alert( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
+// alert( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
 
-alert( arr.filter(inArray([1, 2, 10])) ); // 1,2
+// alert( arr.filter(inArray([1, 2, 10])) ); // 1,2
 
 function inBetween(from,to){
   return function(value){
@@ -169,10 +170,24 @@ function inArray(arr){
   }
 }
 
+function camelize(str){
+  let words = str.split("-");
+  for(let i = 0; i < words.length; i++){
+  if(i>0){
+  words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+  }
+  
+  }
+  let newWords = words.join("");
+  return newWords;
+ }
+  
+//  console.log(camelize("how-are-you-today"));
 
 
-
-
+// log(camelize("back-ground-color")) //== 'backgroundColor';
+// log(camelize("list-style-image")) //== 'listStyleImage';
+// camelize("-webkit-transition")// == 'WebkitTransition';
 
 
 
