@@ -16,15 +16,15 @@ let rabbit = {
   jumps: true
 };
 
-alert( rabbit.jumps ); // true
+// alert( rabbit.jumps ); // true
 
 delete rabbit.jumps;
 
-alert( rabbit.jumps ); // null
+// alert( rabbit.jumps ); // null
 
 delete animal.jumps;
 
-alert( rabbit.jumps ); // undefined
+// alert( rabbit.jumps ); // undefined
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -51,7 +51,7 @@ let pockets = {
   money: 2000 ,
   __proto__: bed
 };
-log(pockets.pen)
+// log(pockets.pen)
 
 // Use __proto__ to assign prototypes in a way that any property lookup will follow the path: pockets → bed → table → head. For instance, pockets.pen should be 3 (found in table), and bed.glasses should be 1 (found in head).
 // Answer the question: is it faster to get glasses as pockets.glasses or head.glasses? Benchmark if needed.
@@ -103,9 +103,45 @@ let lazy = {
 
 // This one found the food
 speedy.eat("apple");
-alert( speedy.stomach ); // apple
+// alert( speedy.stomach ); // apple
 
 // This one also has it, why? fix please.
-alert( lazy.stomach ); // apple
+// alert( lazy.stomach ); // apple
 
 // Since there is no stomach property in each objects speedy and lazy, this in the method eat(food) is first going to look through the object before the dot(.). If nothing is found there with the property named "stomach" it will go to the prototype object and make edit to the stomach there. This error can be easily avoided by adding the stomach property in each objects i.e speedy and lazy.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+function Calculator(){
+
+  this.read = function(){
+     this.a = +prompt("enter a number: ", 0);
+     this.b = +prompt("enter another number: ", 0)
+  };
+
+  this.add = function(){
+    return this.a + this.b;
+  };
+
+  this.mul = function(){
+    return this.a * this.b
+  };
+}
+
+let calculator = new Calculator();
+calculator.read();
+
+// alert( "Sum=" + calculator.add() );
+// alert( "Mul=" + calculator.mul() );
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+function Accumulator(n){
+  this.value = n ;
+  this.read = function(){
+    this.value += +prompt('How much to add', 0)
+  }
+}
+let accumulator = new Accumulator(1);
+accumulator.read();
+accumulator.read();
+alert(accumulator.value);
