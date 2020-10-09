@@ -5,13 +5,14 @@ var log = console.log; //shortcut for console.log
 if (typeof alert === "undefined") var alert = console.log; //this will log in node and alert in browser
 if (typeof prompt === "undefined") var prompt = require("prompt-sync")();
 
-// function sayHi(){
-//   console.log("Hello");
-//   return function (){
-//     console.log('Bye');
-//   }
-// }
-//   // setTimeout(sayHi,2000);
+function sayHi(){
+  console.log("Hello");
+  return function (){
+    console.log('Bye');
+  }
+}
+  setTimeout(sayHi,2000);
+  console.log(setTimeout)
 
 
 /////////////////////////////////////////////////////////////////////
@@ -47,26 +48,31 @@ if (typeof prompt === "undefined") var prompt = require("prompt-sync")();
 
 //////////////////////////////////////////////////////////////////////
 
-let john = {name : "John", surname : "Smith" , age : "10"};
-let pete = {name : "Pete", surname : "Hunt" , age : "2"};
-let people = [john , pete]
+// let john = {name : "John", surname : "Smith" , age : "10"};
+// let pete = {name : "Pete", surname : "Hunt" , age : "2"};
+// let people = [john , pete]
 
-let output = people.map( user => {
-  return {
-    fullname:  `${user.name} ${user.surname}`,
-    age : user.age
-  }
-})
+// let output = people.map( user => {
+//   return {
+//     fullname:  `${user.name} ${user.surname}`,
+//     age : user.age
+//   }
+// })
 // log(output)
 
 ////////////////////////////////////////////////////////////////////////
 
-let numArray = [5,44,10,33];
+let numArray = [5,44,1,33];
+// log(Math.min(...numArray))
 
-let get = numArray.reduce((a,b)=> a < b ? a : b, 100000);
+let get = numArray.reduce((a,b)=> a < b ? a : b, Infinity);
 // log(get);
 
 ////////////////////////////////////////////////////////////////////////
+
+let john = {name : "John", surname : "Smith" , age : 10};
+let pete = {name : "Pete", surname : "Hunt" , age : 20};
+let people = [john , pete]
 
 // let young = people.reduce((a, b) =>{
 //   let count = 0
@@ -83,8 +89,8 @@ let get = numArray.reduce((a,b)=> a < b ? a : b, 100000);
 // console.log(young)
 
 
-let young = people.reduce((a, b) => a > b.age ?  b.age : a , 30 )
-// console.log(young)  //10, 5
+let young = people.reduce((a, b) => a < b.age ?  a : b.age , Infinity )
+// log(young)  //10, 5
 
 /////////////////////////////////////////////////////////////////////////
 
@@ -95,15 +101,72 @@ function makeAccount(){
     return function(op, value){
     if ( op === "add"){
       balance += value;
+      return balance;
     } else if ( op === "debt"){
       balance -= value;
-    }
+      return balance;
+    } 
 }
-return balance;
 }
-let account1 = makeAccount();
-log(account1("add", 10));
-log(account1("add", 10));
-log(account1("debt", 4));
+// let account1 = makeAccount();
+// log(account1("add", 10));
+// log(account1("add", 10));
+// log(account1("debt", 4));
 
-/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+let node4 = {name : "label", children : null};
+let node5 = {name : "input", children : null};
+let node3 = {name : "p", children : null};
+let node2 = {name : "div", children : [node4, node5]};
+let node1 = {name : "boday", children : [node2, node3]}
+
+function classAdder(node){
+  if(node.children === null ){
+    node.class = "classNode";
+  } else {
+    node.class = "classNode";
+    for (let element of node.children){
+      classAdder(element);
+    }
+  }
+}
+// console.log(node1)
+// classAdder(node1)
+// console.log(node1)
+// console.log(node4)
+// console.log(node5)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+function sumToN(num){
+  if (num === 1){
+    return 1;
+  } else {
+    return num + sumToN(num -1);
+  }
+}
+
+// log(sumToN(5))
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function tenClock(){
+  let tickCount = 10;
+  const watchId = setInterval(logTime, 1000)
+  function logTime(){
+    let currentTime = new Date()
+    let hrs = currentTime.getHours()
+    let min = currentTime.getMinutes()
+    let sec = currentTime.getSeconds()
+    log(hrs + ":" + min + ":" + sec)
+    if (tickCount === 0){
+      clearInterval(watchId);
+    } else {
+      tickCount -- ;
+    }
+  }
+}
+// log(tenClock())
+
+

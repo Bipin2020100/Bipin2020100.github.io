@@ -6,29 +6,34 @@ if (typeof prompt === "undefined") var prompt = require("prompt-sync")();
 ////////////////////////////////////////////////////////////////////
 // Fix a function that loses "this"
 
-// function askPassword(ok, fail) {
-//   let password = prompt("Password?", '');
-//   if (password == "rockstar") ok();
-//   else fail();
-// }
+function askPassword(ok, fail) {
+  let password = prompt("Password?", '');
+  if (password == "rockstar") ok();
+  else fail();
+}
 
-// let user = {
-//   name: 'John',
+let user = {
+  name: 'John',
 
-//   loginOk() {
-//     alert(`${this.name} logged in`);
-//   },
+  loginOk() {
+    alert(`${this.name} logged in`);
+  },
 
-//   loginFail() {
-//     alert(`${this.name} failed to log in`);
-//   },
+  loginFail() {
+    alert(`${this.name} failed to log in`);
+  },
 
-// };
+};
 // let abc =user.loginOk
 // askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
 // askPassword(function(){user.loginOk()}, function(){user.loginFail()});
 // askPassword(function(){(user.loginOk.call(user))},function(){user.loginFail.call(user)});
 // askPassword(function(){(user.loginOk.apply(user))},function(){user.loginFail.apply(user)});
+// askPassword.apply(user, [user.loginOk.bind(user), user.loginFail.bind(user)]);
+// askPassword.call(user, user.loginOk.bind(user), user.loginFail.bind(user));
+// // OR
+// askPassword(() => user.loginOk.call(user), () => user.loginFail.call(user));
+
 
 //////////////////////////////////////////////////////////////////////////
 
