@@ -100,20 +100,51 @@ if (typeof prompt === "undefined") var prompt = require("prompt-sync")();
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function Rabbit(name) {
-  this.name = name;
-}
-Rabbit.prototype.sayHi = function() {
-  alert(this.name);
-};
+// function Rabbit(name) {
+//   this.name = name;
+// }
+// Rabbit.prototype.sayHi = function() {
+//   alert(this.name);
+// };
 
-let rabbit = new Rabbit("Rabbit");
-// These calls do the same thing or not?
+// let rabbit = new Rabbit("Rabbit");
+// // These calls do the same thing or not?
 
-rabbit.sayHi();// Rabbit
-Rabbit.prototype.sayHi();//undefined
-Object.getPrototypeOf(rabbit).sayHi();//undefined
- rabbit.__proto__.sayHi(); //undefined
+// rabbit.sayHi();// Rabbit
+// Rabbit.prototype.sayHi();//undefined
+// Object.getPrototypeOf(rabbit).sayHi();//undefined
+//  rabbit.__proto__.sayHi(); //undefined
 
  ///////////////////////////////////////////////////////////////////
+
+//  Create an object called Teacher derived from the Person class, and implement a method called teach
+//  which receives a string called subject, and prints out:
+//  [teacher's name] is now teaching [subject]
+//  Here is code for Person and an example of a Student function constructor. Write Mocha tests that verify
+//  the describe, learn, and teach methods work as expected for students and teachers.
+ var Person = function() {};
+ Person.prototype.initialize = function(name, age)
+ {
+  this.name = name;
+  this.age = age;
+ }
+ Person.prototype.describe = function()
+ {
+  return this.name + ", " + this.age + " years old.";
+ }
+ var Student = function() {};
+ Student.prototype = new Person();
+ Student.prototype.learn = function(subject)
+ {
+  console.log(this.name + " just learned " + subject);
+ }
+ var me = new Student();
+ me.initialize("John", 25);
+ me.learn("Inheritance");
+
+let Teacher = {
+  
+  }
+  __proto__ = 
+}
 
