@@ -1,5 +1,7 @@
 // "use strict"
 
+/* eslint-disable */
+
 var winners = new Array();
 var player1Selections = new Array();
 var player2Selections = new Array();
@@ -9,7 +11,7 @@ var currentPlayer = 0;
 var move = 0;
 var points1 = 0;    // player 1 points
 var points2 = 0;    // player 2 points
-var size = 3;
+var size = 4;
 
 function drawBoard() {
     var Parent = document.getElementById("game");
@@ -19,10 +21,10 @@ function drawBoard() {
         Parent.removeChild(Parent.firstChild);
     }
 
-    for (s = 0; s < 3; s++) {
+    for (s = 0; s < 4; s++) {
         var row = document.createElement("tr");
         
-        for (r = 0; r < 3; r++) {
+        for (r = 0; r < 4; r++) {
             var col = document.createElement("td");
             col.id = counter;
 
