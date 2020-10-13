@@ -102,14 +102,16 @@ function reset()
 
 function loadAnswers()
 {
-    winners.push([1, 2, 3]);
-    winners.push([4, 5, 6]);
-    winners.push([7, 8, 9]);
-    winners.push([1, 4, 7]);
-    winners.push([2, 5, 8]);
-    winners.push([3, 6, 9]);
-    winners.push([1, 5, 9]);
-    winners.push([3, 5, 7]);
+    winners.push([1, 2, 3, 4]);
+    winners.push([5, 6, 7, 8]);
+    winners.push([9, 10, 11, 12]);
+    winners.push([13, 14, 15, 16]);
+    winners.push([1, 5, 9, 13]);
+    winners.push([2, 6, 10,14]);
+    winners.push([3, 7, 11,15]);
+    winners.push([4, 8, 12, 16]);
+    winners.push([1, 6, 11, 16])
+    winners.push([4, 7, 9, 13])
 }
 
 function checkWinner() {
