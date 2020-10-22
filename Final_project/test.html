@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./test.css" rel="stylesheet"/>
+    <script src="./test_library.js"></script>
+    <script src="./action.js"></script>
+</head>
+<body>
+    <div id="main">
+        <h1>Welcome to the Labirary</h1>
+        <label>Please enter your name:</label> 
+        <input type="text" id="student_name"/>
+        <button onclick="pullInfo()">Pull Info</button><span id="info">Enter your name and click Pull Info button</span><br/>
+        <button onclick="add(event)" value="365 Ways To Raise Your Frequency"><img src="./pictures/365 Ways To Raise Your Frequency.PNG" width="200" height="310"/></button>
+        <button onclick="add(event)" value="Atomic Habit"><img src="./pictures/Atomic Habit.PNG" width="200" height="310"/></button>
+        <button onclick="add(event)" value="The Power Of Happiness"><img src="./pictures/The Power Of Happiness.PNG" width="200" height="310"></button>
+        <button onclick="add(event)" value="Power Of Now"><img src="./pictures/The Power Of Now.PNG" width="200" height="310"></button>
+        <button onclick="add(event)" value="The Subtle Art Of Not Giving A F_ck"><img src="./pictures/The Subtle Art Of Not Giving A F_ck.PNG" width="200" height="310"></button>
+        <button onclick="add(event)" value="The_Alchemist"><img src="./pictures/The_Alchemist.PNG" width="200" height="310"></button>
+        
+        <table id="shelf">
+            <caption>Book Shelf</caption>
+            <tr><th>Book Title</th><th>Due Date</th></tr>
+        </table>
+
+        <br/><br/><button id="btn-borrow" onclick=" borrowBook()"> Borrow Book</button>
+        <button id="btn-return" onclick="returnBook()">Return Book</button>
+        <button id="btn-reset" onclick="resetBookShelf()">Reset</button>
+    </div>
+</body>
+</html>
