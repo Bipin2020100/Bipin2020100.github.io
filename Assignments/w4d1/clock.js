@@ -42,17 +42,17 @@ class Clock {
 let clock = new Clock({template: 'h:m:s'});
 // clock.start();
 
-class ExtendedClock extends clock{
-  
-  constructor (options){ 
-    super(options);
-    let {precision = 1000} = options;
-    this.precision = precision;
-
+class ExtendedClock extends Clock {
+  constructor(template, precision) {
+    super(template);
+    this.precison = precision;
   }
 
+  start() {
+    this.render();
+    this.timer = setInterval(() => this.render(), this.precison);
+  }
 }
-let extendclock = new Clock({template: 'h:m:s'});
 extendclock.start();
 ////////////////////////////////////////////////////
 // didnot understand the solution. I am loosing concept on this one.

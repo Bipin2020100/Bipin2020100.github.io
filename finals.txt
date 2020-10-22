@@ -1,0 +1,25 @@
+Major topics for final review
+
+ this, bind, wrapper, call, apply
+  - slide 16 and 24:  bind, call, apply, wrapper and this
+  - slide 18:  review of 'this' and object before dot
+ 
+ [[Prototype]], __proto__, Function.prototype, Object.create, new MyConstructorFn()
+   - slide 12:  value of 'this'  ("super important")
+   - slide 13:  methods generally shared, object state generally not  (but either could be either way ...)
+   - slide 14:  own properties vs inherited
+   - slide 19:  this is how new MyConstructor sets up prototype tree
+   - slide 22:  3 things new does 
+ 
+ shared properties and methods versus own properties and methods
+   - slide 15
+ 
+ be able to draw object diagram with constructor function, prototype objects, descendent objects
+   - slide 20
+ 
+ be able to write a class as a constructor function and vice versa
+  slide 9, 11, 16
+ 
+ class syntax, methods and properties in objects versus prototype hierarchy, extend and super
+  slide 7, 8
+  slide 21, 22, 23 supe

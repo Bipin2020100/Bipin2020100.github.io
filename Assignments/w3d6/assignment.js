@@ -28,7 +28,7 @@ if (typeof prompt === "undefined") var prompt = require("prompt-sync")();
 
 // alert( rabbit.eats ); //  It is only going to affect the new ones not the existing ones. IF that code Rabbit.prototype is on the line 24 than the return is undefined. In this problem it's still true. That is interesting. I thought that would be undefined.
 
-////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////
 
 // function Rabbit() {}
 // Rabbit.prototype = {

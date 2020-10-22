@@ -1,3 +1,5 @@
+/* eslint-disable*/
+
 var log = console.log; //shortcut for console.log
 if (typeof alert === "undefined") var alert = console.log; //this will log in node and alert in browser
 if (typeof prompt === "undefined") var prompt = require("prompt-sync")(); //this will prompt in node and not affect browser prompt
@@ -26,11 +28,13 @@ homer.descendents.push(bart, lisa, maggie);
 function everyOneInTree(tree) {
   log(tree.value)
   if (tree.descendents.length !== 0) {
-    tree.descendents.forEach(n => everyOneInTree(n))
+    for (let child of tree.descendents){
+      everyOneInTree(child)
+    }
   }
 }
 
-// log(everyOneInTree(homer));
+ log(everyOneInTree(abe));
 
 /**@param {object} node is a tree node
  * @param {string } target is a string we are matching
@@ -74,14 +78,14 @@ function contains(node, target) {
 // 7. Write code to illustrate the use of the spread operator for the following use cases
 // a) Concatenate arrays into new arrays 
 
-let a, b, c, d, e;
-a = [1,2,3,4]
-b = ["Bipin", "Bisesh"]
-c = "Nepal"
-d = [23,30, "awesome"]
+// let a, b, c, d, e;
+// a = [1,2,3,4]
+// b = ["Bipin", "Bisesh"]
+// c = "Nepal"
+// d = [23,30, "awesome"]
 
-e = [...a, b, c, ...d] // see how it keeps b as an array itself
-let f = [...a,...b, c, ...d]
+// e = [...a, b, c, ...d] // see how it keeps b as an array itself
+// let f = [...a,...b, c, ...d]
 // log(e);
 // log(f);
 
@@ -89,23 +93,23 @@ let f = [...a,...b, c, ...d]
 
 // b) Make the copy of an array.
 
-let happy = [...f]
+// let happy = [...f]
 // log(happy)
 ///////////////////////////////////////////////////////////////////
 // c) Concatenate an array and a new array element
 
-let extra = [...a, "ram", "kathmandu"]
-log(extra);
+// let extra = [...a, "ram", "kathmandu"]
+// log(extra);
 ///////////////////////////////////////////////////////////////////
 // d) Use an array as arguments
 
 
 
 //  e) Use Math.min and Math.max
-let arr = [243, 157, 21, 22, 5689];
+// let arr = [243, 157, 21, 22, 5689];
 
-alert( Math.max(...arr) )
-alert( Math.min(...arr) )
+// alert( Math.max(...arr) )
+// alert( Math.min(...arr) )
 // f) Combine several objects into a single object
 // 8. Write code to illustrate the use of the rest operator 
 
